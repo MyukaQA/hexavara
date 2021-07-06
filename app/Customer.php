@@ -13,4 +13,8 @@ class Customer extends Model
     public function subs(){
         return $this->belongsTo(Subscription::class,'subscription_id');
     }
+
+    public function call_record(){
+        return $this->hasMany(CallRecord::class,'phone');
+    }
 }

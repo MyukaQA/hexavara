@@ -12,9 +12,9 @@ class DashboardController extends Controller
     public function get_data_customer(){
         $customer = Customer::all();
         return DataTables::of($customer)
-        ->addColumn('action', function(){
-            $btn = '<a href="" class=""><i class="far fa-edit"></i></a> |';
-			$btn = $btn.'<a href="" class=""><i class="far fa-trash-alt"></i></a>';
+        ->addColumn('action', function($customer){
+            $btn = '<a href="'.route('admin.edit',$customer->id).'" class=""><i class="far fa-edit"></i></a> |';
+			$btn = $btn.'<a href="'.route('admin.delete',$customer->id).'" class=""><i class="far fa-trash-alt"></i></a>';
 
             return $btn;
         })
@@ -38,13 +38,27 @@ class DashboardController extends Controller
         $subs = Subscription::all();
         return view('pages.dashboard.create',compact('subs'));
     }
-
+    
     public function store(Request $request){
         $customer = Customer::create($request->all());
         return redirect()->route('admin.index');
     }
     
-    public function history_index(){
-        return view('pages.dashboard.history.index');
+    public function edit($id){
+        $customer = Customer::find($id);
+        $subs = Subscription::all();
+        return view('pages.dashboard.edit',compact('subs','customer'));
+    }
+
+    public function update(Request $request, $id){
+        $customer = Customer::find($id);
+        $customer->update($request->all());
+        return redirect()->route('admin.index');
+    }
+
+    public function delete($id){
+        $customer = Customer::find($id);
+        $customer->delete();
+        return redirect()->back();
     }
 }

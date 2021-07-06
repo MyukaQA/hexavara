@@ -5,24 +5,24 @@
       <div class="card">
         <div class="card-body">
           <div class="d-flex justify-content-between">
-            <h5 class="card-title">Create Data Customer</h5>
+            <h5 class="card-title">Edit Data Customer</h5>
           </div>
-          <form action="{{route('admin.store')}}" method="POST">
+          <form action="{{route('admin.update',$customer->id)}}" method="POST">
             {{ csrf_field() }}
             <div class="form-group">
               <label>Name</label>
-              <input name="name" type="text" class="form-control">
+              <input name="name" type="text" class="form-control" value="{{$customer->name}}">
             </div>
             <div class="form-group">
               <label>Phone</label>
-              <input name="phone" type="tel" class="form-control">
+              <input name="phone" type="tel" class="form-control" value="{{$customer->phone}}">
             </div> 
             <div class="form-group">
               <label>Example select</label>
               <select name="subscription_id" class="form-control">
                 <option value="">-- Pilih Subs Plan (quota) --</option>
                 @foreach ($subs as $sub)
-                <option value="{{$sub->id}}">{{$sub->plan}} ({{$sub->quota}})</option>
+                <option value="{{$sub->id}}" {{$sub->id == $customer->subscription_id ? 'selected' : ''}}>{{$sub->plan}} ({{$sub->quota}})</option>
                 @endforeach
               </select>
             </div>
