@@ -6,9 +6,9 @@ body {
 #container {
   margin: 0;
   padding: 0;
-  height: 650px;
+  height: 690px;
   width: 100%;
-  background: linear-gradient(rgba(255, 255, 255, .3), rgba(255, 255, 255, .3)), url("https://images.pexels.com/photos/1363876/pexels-photo-1363876.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
+  
 }
 
 #profilecontainer {
@@ -25,7 +25,7 @@ body {
 #part1 {
   width: 350px;
   height: 300px;
-  background-color: #FF9299;
+  background-color: #39A2DB;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px
 }
@@ -54,7 +54,6 @@ body {
   border: 3px solid white;
   position: relative;
   top: 50px;
-  left: 21.5%;
   cursor: pointer
 }
 
@@ -118,63 +117,15 @@ body {
   border: none;
   border-radius: 25px;
   cursor: pointer;
-  color: #FF9299
+  color: #39A2DB
 }
 
 #follow:hover {
-  background-color: cadetblue;
+  background-color: #053742;
   color: white;
   transition: 0.5s
 }
 
-#txt1,
-#txt2,
-#txt3,
-#txt4,
-#txt5,
-#txt6 {
-  font-family: 'Rubik', sans-serif;
-  font-size: 16px
-}
-
-#txt1 {
-  position: relative;
-  top: 50px;
-  left: 10%;
-  color: gray
-}
-
-#txt2 {
-  position: relative;
-  top: 45px;
-  left: 16%
-}
-
-#txt3 {
-  position: relative;
-  top: -30px;
-  left: 37%;
-  color: gray
-}
-
-#txt4 {
-  position: relative;
-  top: -35px;
-  left: 41%
-}
-
-#txt5 {
-  position: relative;
-  top: -110px;
-  left: 68%;
-  color: gray
-}
-
-#txt6 {
-  position: relative;
-  top: -115px;
-  left: 74%
-}
 
 #next {
   width: 280px;
@@ -207,7 +158,7 @@ body {
   border: 5px solid white;
   position: relative;
   top: 30px;
-  left: 24.5%;
+  
   cursor: pointer
 }
 

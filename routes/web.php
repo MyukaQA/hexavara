@@ -16,3 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/customer-data','DashboardController@get_data_customer')->name('data.customer');
+Route::get('/dashboard','DashboardController@index')->name('admin.index');
+Route::get('/dashboard/create','DashboardController@create')->name('admin.create');
+Route::post('/dashboard/store','DashboardController@store')->name('admin.store');
+
+
+Route::get('/history','DashboardController@history_index')->name('history.index');
