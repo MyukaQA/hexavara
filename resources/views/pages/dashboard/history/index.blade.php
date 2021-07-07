@@ -37,7 +37,7 @@
     processing: true,
     serverSide: true,
     "ordering": true,
-    searching: true,
+    searching: false,
     "ajax" : {
       "url" : '{{ route("data.history") }}',
       "error" : function (jqXHR, textStatus, errorThrown) {

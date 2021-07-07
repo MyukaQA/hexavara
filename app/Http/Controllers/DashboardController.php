@@ -41,6 +41,8 @@ class DashboardController extends Controller
     
     public function store(Request $request){
         $customer = Customer::create($request->all());
+
+        toast('Customer success created','success')->autoClose(3000);
         return redirect()->route('admin.index');
     }
     
@@ -49,16 +51,18 @@ class DashboardController extends Controller
         $subs = Subscription::all();
         return view('pages.dashboard.edit',compact('subs','customer'));
     }
-
+    
     public function update(Request $request, $id){
         $customer = Customer::find($id);
         $customer->update($request->all());
+        toast('Customer success updated','success')->autoClose(3000);
         return redirect()->route('admin.index');
     }
-
+    
     public function delete($id){
         $customer = Customer::find($id);
         $customer->delete();
+        toast('Customer success deleted','success')->autoClose(3000);
         return redirect()->back();
     }
 }

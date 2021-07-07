@@ -41,10 +41,10 @@
       <div class="main-sidebar">
         <aside id="sidebar-wrapper">
           <div class="sidebar-brand">
-            <a href="index.html">Stisla</a>
+            <a href="index.html">Skill Tes Hexavara</a>
           </div>
           <div class="sidebar-brand sidebar-brand-sm">
-            <a href="index.html">St</a>
+            <a href="index.html">SKH</a>
           </div>
           <ul class="sidebar-menu">
             <li class="menu-header">Dashboard</li>
@@ -101,5 +101,6 @@
   <!-- Page Specific JS File -->
   <script src="{{asset('admin/assets/js/page/index-0.js')}}"></script>
   @yield('script')
+  @include('sweetalert::alert')
 </body>
 </html>

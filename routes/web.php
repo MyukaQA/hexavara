@@ -28,7 +28,3 @@ Route::get('/dashboard/{id}/delete','DashboardController@delete')->name('admin.d
 
 Route::get('/history-data','HistoryController@get_data_history')->name('data.history');
 Route::get('/history','HistoryController@index')->name('history.index');
-Route::get('/history/create','HistoryController@create')->name('history.create');
-Route::post('/history/store','HistoryController@store')->name('history.store');
-Route::get('/history/{id}/edit','HistoryController@edit')->name('history.edit');
-Route::post('/history/{id}/update','HistoryController@update')->name('history.update');
